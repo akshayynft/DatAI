@@ -1,28 +1,51 @@
-# Hello World AVS
+# DatAI
+Secure and Private Decentralised Data storage for AI and other usage secured by crypto economic security of ETH PoS
+through Eigen Layer
 
-Welcome to the Hello World AVS.
+# DatAI Architecture
 
-This project shows you the simplest functionality you can expect from an AVS.
+![image](https://github.com/akshayynft/DatAI/assets/32410489/7aac4ba6-aae3-4c89-8123-d26fa8ea9ac6)
 
-It will give you a concrete understanding of the basic components.
+**Several key components:**
 
-![hello-world-png](./assets/hello-world-diagram.png)
+**Peer-to-Peer Network:** Utilizes libp2p (or other need to
+research) for decentralized communication between nodes.
 
-There are 5 steps to this AVS:
-- AVS consumer requests a "Hello World" message to be generated and signed
-- AVS takes on the request by emitting an event for operators to pick up the request
-- any operator who is staked to serve this AVS takes this request, generates this message and signs it
-- the operator submits this message with their signature back to the AVS
-- *if the operator is in fact registered to the AVS and has the minimum needed stake, the submission is accepted*
+**Storage Nodes:** Nodes that store data are incentivized using
+ETH or Storage Points redeemable with ETH or its smaller
+denominations like wei or gwei via Eigen Layer.
 
-That's it. This simple flow highlights some of the core mechanics of how AVSs work.
+**Smart Contracts:** Deployed on Ethereum, these
+handle file registration, proof of storage, retrieval requests,
+and incentive distribution.
 
-Where additional sophistication with AVSs come into the picture:
-- the nature of the request is more sophisticated than generating a constant string
-- the operators might need to coordinate with each other
-- the type of signature is different based on the constraints of the service
-- the type and amount of security used to secure the AVS
-- and so on...
+**Client Interface:** A user-friendly frontend built with React.js
+for file upload and retrieval.
+
+**Storage Mechanism:**
+Users upload files, which are then split into parts/shards and
+distributed across storage nodes.
+
+Each shard is associated with a unique cryptographic hash to
+ensure data integrity and privacy.
+
+Storage nodes commit to storing these shards and provide
+regular proofs of storage.
+
+**Retrieval Mechanism:**
+Users request files using the unique hash associated with
+their data.
+The system retrieves and reassembles the shards from
+various nodes to reconstruct the original file.
+
+**Incentive Mechanism:**
+Storage providers are rewarded with ETH or points
+redeemable with ETH based on the amount of data they store
+and their uptime.
+
+Malicious activity or downtime results in slashing of staked
+ETH via Eigen Layer, ensuring reliability and trustworthiness
+of storage nodes.
 
 ## Quick Start
 
